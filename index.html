@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="description" content="Bezpečný generátor hesiel - offline PWA aplikácia">
+
+    <title>Generátor Hesiel</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/icons/icon-192.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="text-center mb-4">
+            <h1 class="app-title">🔐 Generátor Hesiel</h1>
+            <p class="text-muted">Bezpečné heslo na jedno kliknutie</p>
+        </header>
+
+        <!-- Main Card -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+
+                <!-- Password Display -->
+                <div class="password-display mb-4">
+                    <div id="passwordOutput" class="password-output">
+                        <span class="placeholder-text">Klikni na Vygenerovať</span>
+                    </div>
+                    <div id="strengthMeter" class="strength-meter"></div>
+                </div>
+
+                <!-- Length Control -->
+                <div class="mb-4">
+                    <label for="lengthSlider" class="form-label">
+                        Dĺžka hesla: <strong id="lengthValue">16</strong>
+                    </label>
+                    <div class="d-flex align-items-center gap-3">
+                        <input
+                                type="range"
+                                class="form-range flex-grow-1"
+                                id="lengthSlider"
+                                min="8"
+                                max="30"
+                                value="16"
+                                aria-label="Dĺžka hesla"
+                        >
+                        <input
+                                type="number"
+                                class="form-control length-input"
+                                id="lengthNumber"
+                                min="8"
+                                max="30"
+                                value="16"
+                                aria-label="Zadaj dĺžku hesla"
+                        >
+                    </div>
+                </div>
+
+                <!-- Character Set Options -->
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Typy znakov:</label>
+                    <div class="character-options">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="lowercaseCheck" checked>
+                            <label class="form-check-label" for="lowercaseCheck">
+                                Malé písmená (a-z)
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="uppercaseCheck" checked>
+                            <label class="form-check-label" for="uppercaseCheck">
+                                Veľké písmená (A-Z)
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="numbersCheck" checked>
+                            <label class="form-check-label" for="numbersCheck">
+                                Čísla (0-9)
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="specialCheck">
+                            <label class="form-check-label" for="specialCheck">
+                                Špeciálne znaky (!@#$...)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="alert alert-danger d-none" role="alert"></div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="generateBtn" class="btn btn-primary btn-lg">
+                        🎲 Vygenerovať
+                    </button>
+                    <button id="copyBtn" class="btn btn-success btn-lg" disabled>
+                        📋 Kopírovať
+                    </button>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <footer class="text-center mt-4">
+            <small class="text-muted">
+                🔒 Vaše heslo sa nikde neukladá | Funguje offline
+            </small>
+        </footer>
+    </div>
+</div>
+
+<!-- Copy Feedback -->
+<div id="copyFeedback" class="copy-feedback">
+    ✓ Skopírované!
+</div>
+
+<!-- Main JavaScript -->
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
