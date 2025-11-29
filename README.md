@@ -7,7 +7,6 @@
 - 🎲 **Bezpečné generovanie** - používa `crypto.getRandomValues()` s rejection sampling
 - 🔐 **Customizovateľné heslo** - dĺžka 8-30 znakov, viacero typov znakov
 - 📋 **Jednoklikové kopírovanie** - okamžité kopírovanie do schránky
-- 📊 **Indikátor sily** - vizuálne zobrazenie entrópie hesla
 - 📱 **Responzívny dizajn** - funguje na všetkých zariadeniach
 - 🔌 **Offline režim** - funguje bez internetového pripojenia
 - 🏠 **Inštalovateľná PWA** - pridaj na plochu ako natívna appka
@@ -33,15 +32,6 @@
 4. Vygeneruj zvyšné znaky náhodne (crypto.getRandomValues)
 5. Zamieš Fisher-Yates algoritmom
 6. Zobraz heslo + silu (entropia)
-```
-
-### Výpočet sily hesla
-```
-Entropia = dĺžka × log₂(veľkosť_poolu)
-
-Slabé:  < 50 bitov
-Stredné: 50-75 bitov
-Silné:  > 75 bitov
 ```
 
 ## 🛠️ Technológie

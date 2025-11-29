@@ -18,13 +18,13 @@ const generateBtn = document.getElementById('generateBtn');
 const copyBtn = document.getElementById('copyBtn');
 const passwordOutput = document.getElementById('passwordOutput');
 const errorMessage = document.getElementById('errorMessage');
-const copyFeedback = document.getElementById('copyFeedback');
 const strengthMeter = document.getElementById('strengthMeter');
 
 let currentPassword = '';
 
 // Initialize
 function init() {
+
     // Sync length controls
     lengthSlider.addEventListener('input', (e) => {
         const value = e.target.value;
@@ -50,7 +50,7 @@ function init() {
 
     // Register service worker
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/public/service-worker.js')
             .then(() => console.log('Service Worker registered'))
             .catch(err => console.error('Service Worker registration failed:', err));
     }
@@ -174,7 +174,6 @@ async function copyPassword() {
         // Modern Clipboard API
         if (navigator.clipboard && navigator.clipboard.writeText) {
             await navigator.clipboard.writeText(currentPassword);
-            showCopyFeedback();
         } else {
             // Fallback for older browsers
             const textarea = document.createElement('textarea');
@@ -185,20 +184,11 @@ async function copyPassword() {
             textarea.select();
             document.execCommand('copy');
             document.body.removeChild(textarea);
-            showCopyFeedback();
         }
     } catch (err) {
         showError('Nepodarilo sa skopírovať heslo');
         console.error('Copy failed:', err);
     }
-}
-
-// Show copy feedback
-function showCopyFeedback() {
-    copyFeedback.classList.add('show');
-    setTimeout(() => {
-        copyFeedback.classList.remove('show');
-    }, 5000);
 }
 
 // Error handling

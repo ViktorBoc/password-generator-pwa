@@ -198,30 +198,6 @@ body {
     border: none;
 }
 
-/* Copy Feedback */
-.copy-feedback {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: var(--success-color);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    pointer-events: none;
-    display: none;
-}
-
-.copy-feedback.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    display: block;
-}
 
 /* Footer */
 footer {
