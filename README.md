@@ -31,7 +31,7 @@
 3. Zabezpeč aspoň 1 znak z každého typu
 4. Vygeneruj zvyšné znaky náhodne (crypto.getRandomValues)
 5. Zamieš Fisher-Yates algoritmom
-6. Zobraz heslo + silu (entropia)
+6. Zobraz heslo
 ```
 
 ## 🛠️ Technológie
