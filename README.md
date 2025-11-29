@@ -14,7 +14,7 @@
 
 ## 🚀 Demo
 
-**Live aplikácia:** [https://ViktorBoc.github.io/password-generator-pwa](https://TVOJE_GITHUB_MENO.github.io/password-generator-pwa)
+**Live aplikácia:** [https://ViktorBoc.github.io/password-generator-pwa](https://ViktorBoc.github.io/password-generator-pwa)
 
 ## 📱 Ako to funguje?
 
